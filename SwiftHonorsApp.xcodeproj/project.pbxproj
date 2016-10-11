@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		B28FE23A1D99B59B00A8CCAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FE2391D99B59B00A8CCAB /* AppDelegate.swift */; };
-		B28FE23C1D99B59B00A8CCAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FE23B1D99B59B00A8CCAB /* ViewController.swift */; };
+		B28FE23C1D99B59B00A8CCAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FE23B1D99B59B00A8CCAB /* LoginViewController.swift */; };
 		B28FE23F1D99B59B00A8CCAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28FE23D1D99B59B00A8CCAB /* Main.storyboard */; };
 		B28FE2411D99B59B00A8CCAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28FE2401D99B59B00A8CCAB /* Assets.xcassets */; };
 		B28FE2441D99B59B00A8CCAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28FE2421D99B59B00A8CCAB /* LaunchScreen.storyboard */; };
 		B28FE24F1D99B59C00A8CCAB /* SwiftHonorsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FE24E1D99B59C00A8CCAB /* SwiftHonorsAppTests.swift */; };
 		B28FE25A1D99B59C00A8CCAB /* SwiftHonorsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FE2591D99B59C00A8CCAB /* SwiftHonorsAppUITests.swift */; };
+		B28FE2711D99CCF900A8CCAB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FE26F1D99CCF900A8CCAB /* FBSDKCoreKit.framework */; };
+		B28FE2721D99CCF900A8CCAB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FE2701D99CCF900A8CCAB /* FBSDKLoginKit.framework */; };
+		B28FE2781D99D31B00A8CCAB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FE2771D99D31B00A8CCAB /* Bolts.framework */; };
+		B290E3901DAD878B00DD385E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290E38F1DAD878B00DD385E /* Helper.swift */; };
+		B2D0727B1DAD934800EAE9FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D0727A1DAD934800EAE9FF /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		B28FE2361D99B59B00A8CCAB /* SwiftHonorsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftHonorsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28FE2391D99B59B00A8CCAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B28FE23B1D99B59B00A8CCAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B28FE23B1D99B59B00A8CCAB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B28FE23E1D99B59B00A8CCAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B28FE2401D99B59B00A8CCAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B28FE2431D99B59B00A8CCAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,12 @@
 		B28FE2551D99B59C00A8CCAB /* SwiftHonorsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHonorsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28FE2591D99B59C00A8CCAB /* SwiftHonorsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHonorsAppUITests.swift; sourceTree = "<group>"; };
 		B28FE25B1D99B59C00A8CCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28FE26F1D99CCF900A8CCAB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B28FE2701D99CCF900A8CCAB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B28FE2731D99CE3300A8CCAB /* SwiftHonorsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftHonorsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B28FE2771D99D31B00A8CCAB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B290E38F1DAD878B00DD385E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		B2D0727A1DAD934800EAE9FF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28FE2781D99D31B00A8CCAB /* Bolts.framework in Frameworks */,
+				B28FE2721D99CCF900A8CCAB /* FBSDKLoginKit.framework in Frameworks */,
+				B28FE2711D99CCF900A8CCAB /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,11 +112,17 @@
 			isa = PBXGroup;
 			children = (
 				B28FE2391D99B59B00A8CCAB /* AppDelegate.swift */,
-				B28FE23B1D99B59B00A8CCAB /* ViewController.swift */,
+				B28FE23B1D99B59B00A8CCAB /* LoginViewController.swift */,
 				B28FE23D1D99B59B00A8CCAB /* Main.storyboard */,
+				B2D0727A1DAD934800EAE9FF /* ProfileViewController.swift */,
+				B290E38F1DAD878B00DD385E /* Helper.swift */,
 				B28FE2401D99B59B00A8CCAB /* Assets.xcassets */,
 				B28FE2421D99B59B00A8CCAB /* LaunchScreen.storyboard */,
 				B28FE2451D99B59B00A8CCAB /* Info.plist */,
+				B28FE2771D99D31B00A8CCAB /* Bolts.framework */,
+				B28FE26F1D99CCF900A8CCAB /* FBSDKCoreKit.framework */,
+				B28FE2701D99CCF900A8CCAB /* FBSDKLoginKit.framework */,
+				B28FE2731D99CE3300A8CCAB /* SwiftHonorsApp-Bridging-Header.h */,
 			);
 			path = SwiftHonorsApp;
 			sourceTree = "<group>";
@@ -259,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28FE23C1D99B59B00A8CCAB /* ViewController.swift in Sources */,
+				B28FE23C1D99B59B00A8CCAB /* LoginViewController.swift in Sources */,
 				B28FE23A1D99B59B00A8CCAB /* AppDelegate.swift in Sources */,
+				B2D0727B1DAD934800EAE9FF /* ProfileViewController.swift in Sources */,
+				B290E3901DAD878B00DD385E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +424,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftHonorsApp",
+				);
 				INFOPLIST_FILE = SwiftHonorsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CalderCo.SwiftHonorsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftHonorsApp/SwiftHonorsApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -413,10 +442,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftHonorsApp",
+				);
 				INFOPLIST_FILE = SwiftHonorsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CalderCo.SwiftHonorsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftHonorsApp/SwiftHonorsApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -485,6 +520,7 @@
 				B28FE2601D99B59C00A8CCAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B28FE2611D99B59C00A8CCAB /* Build configuration list for PBXNativeTarget "SwiftHonorsAppTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +529,7 @@
 				B28FE2631D99B59C00A8CCAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B28FE2641D99B59C00A8CCAB /* Build configuration list for PBXNativeTarget "SwiftHonorsAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +538,7 @@
 				B28FE2661D99B59C00A8CCAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

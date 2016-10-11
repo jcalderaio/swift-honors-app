@@ -15,8 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //  Make the root view a navigation controller (though not really needed in this app)
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.makeKeyAndVisible()
+        
+        let navigationController = UINavigationController(rootViewController: LoginViewController())
+        window?.rootViewController = navigationController
+        
+        //  Give the navigation bar of root size 18 font and white text
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.boldSystemFontOfSize(18), NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        //  Give the naviagtion bar the blue facebook color
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 65/255, green: 93/255, blue: 174/255, alpha: 1)
+        
+        application.statusBarStyle = .LightContent
+        
         return true
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(application: UIApplication) {
