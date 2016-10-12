@@ -9,9 +9,25 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    
+    @IBOutlet weak var profileViewName: UILabel!
+    
+    
+    @IBOutlet weak var profileViewEmail: UILabel!
+    
+    
+    @IBOutlet weak var profileViewImage: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileViewName.text = userName
+        
+        profileViewEmail.text = userEmail
+        
+        profileViewImage.image = userImage
 
         // Do any additional setup after loading the view.
     }

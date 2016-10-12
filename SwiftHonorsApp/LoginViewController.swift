@@ -8,6 +8,11 @@
 
 import UIKit
 
+var userName:String = ""
+var userEmail:String = ""
+var userImage:UIImage? = nil
+
+
 var LoggedIn = false
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
@@ -23,7 +28,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Setup the Navigation Bar
+        
+        // Adding these two things
+        navigationController?.navigationBar.translucent = false
+        self.extendedLayoutIncludesOpaqueBars = true
+        // prevent extra padding and wierd navi colors
+        
+        navigationItem.title = "Facebook Login"
         
         //Set background color to light blue
         self.view.backgroundColor = UIColorFromHex(0x4099FF, alpha: 1);
@@ -36,15 +48,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         loginButton.delegate = self
         
-        /*
-        if let token = FBSDKAccessToken.currentAccessToken() {
-            fetchProfile()
-            print("Token: \(token)")
-        }
-        */
         
         if let token = FBSDKAccessToken.currentAccessToken() {
             fetchProfile()
+            print("Token: \(token)")
             LoggedIn = true
         }
         else {
@@ -55,24 +62,41 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func fetchProfile() {
-        print("fetch profile")
-        
         let parameters = ["fields": "email, first_name, last_name, picture.type(large)"]
-        FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler { (connection, result, error) in
-            if error != nil {
-                print(error)
+        FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler({ (connection, user, requestError) -> Void in
+            
+            if requestError != nil {
+                print(requestError)
                 return
             }
             
-            if let email = result["email"] as? String {
-                print(email)
+            userEmail = (user["email"] as? String)!
+            let firstName = user["first_name"] as? String
+            let lastName = user["last_name"] as? String
+            
+            userName = "\(firstName!) \(lastName!)"
+            
+            var pictureUrl = ""
+            
+            if let picture = user["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary, url = data["url"] as? String {
+                pictureUrl = url
             }
             
-            if let picture = result["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary, url = data["url"] as? String {
-                print(url)
+            let url = NSURL(string: pictureUrl)
+            NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+                if error != nil {
+                    print(error)
+                    return
+                }
                 
-            }
-        }
+                let image = UIImage(data: data!)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    userImage = image!
+                })
+                
+            }).resume()
+            
+        })
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -82,6 +106,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("completed login")
             fetchProfile()
             print("LoggedIn: \(LoggedIn)")
+            
+            //  Creates a static instance
             
             Helper.helper.loginDidTapped()
             

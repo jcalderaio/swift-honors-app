@@ -6,6 +6,11 @@
 //  Copyright © 2016 John Calderaio. All rights reserved.
 //
 
+
+
+
+
+
 import Foundation
 import UIKit
 
@@ -13,9 +18,9 @@ class Helper {
     
     static let helper = Helper()
     
+    //  All this class does is take us to the first tab on successful Facebook login
+    
     func loginDidTapped() {
-        
-        //  We switch view by setting navigation controller as the new root view controller
         
         //  Create a main storyboard instance
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
