@@ -11,11 +11,12 @@ import UIKit
 var userName:String = ""
 var userEmail:String = ""
 var userImage:UIImage? = nil
+var loggedIn:Bool = false
 
-
-var LoggedIn = false
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     
      //  This adds the Login button to the View Controller
@@ -28,7 +29,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setup the Navigation Bar
+        
+        // If "loggedIn" has a value from a previos run, set it here
+        if defaults.objectForKey("loggedIn") != nil {
+            loggedIn = defaults.objectForKey("loggedIn") as! Bool
+        }
+        
+        //  If "loggedIn" true, then go to first page, else do nothing
+        if defaults.objectForKey("loggedIn") != nil && defaults.objectForKey("loggedIn") as! Bool
+        {
+            //Helper.helper.loginDidTapped()  FOR NOW, LOGOUT BUTTON WONT SHOW UP SO WE DONT WANT THIS TO WORK
+        }
         
         // Adding these two things
         navigationController?.navigationBar.translucent = false
@@ -52,12 +63,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if let token = FBSDKAccessToken.currentAccessToken() {
             fetchProfile()
             print("Token: \(token)")
-            LoggedIn = true
         }
-        else {
-            LoggedIn = false
-        }
-        print("LoggedIn: \(LoggedIn)")
         
     }
     
@@ -105,9 +111,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             print("completed login")
             fetchProfile()
-            print("LoggedIn: \(LoggedIn)")
             
-            //  Creates a static instance
+            defaults.setObject(true, forKey: "loggedIn")
             
             Helper.helper.loginDidTapped()
             
@@ -120,7 +125,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("LoggedIn: \(LoggedIn)")
+        defaults.setObject(false, forKey: "loggedIn")
     }
     
     func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
