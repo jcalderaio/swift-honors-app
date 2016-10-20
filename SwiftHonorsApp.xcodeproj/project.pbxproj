@@ -20,6 +20,9 @@
 		B28FE2781D99D31B00A8CCAB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FE2771D99D31B00A8CCAB /* Bolts.framework */; };
 		B290E3901DAD878B00DD385E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290E38F1DAD878B00DD385E /* Helper.swift */; };
 		B2D0727B1DAD934800EAE9FF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D0727A1DAD934800EAE9FF /* ProfileViewController.swift */; };
+		B2EA92191DB85CB5005A5A9E /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA92171DB85CB5005A5A9E /* TutorialViewController.swift */; };
+		B2EA921A1DB85CB5005A5A9E /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA92181DB85CB5005A5A9E /* TutorialPageViewController.swift */; };
+		B2EA921C1DB85FA6005A5A9E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA921B1DB85FA6005A5A9E /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		B28FE2771D99D31B00A8CCAB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B290E38F1DAD878B00DD385E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B2D0727A1DAD934800EAE9FF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B2EA92171DB85CB5005A5A9E /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		B2EA92181DB85CB5005A5A9E /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		B2EA921B1DB85FA6005A5A9E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,9 @@
 				B21D9DF31DB56851002C7086 /* ToDoViewController.swift */,
 				B290E38F1DAD878B00DD385E /* Helper.swift */,
 				B28FE2401D99B59B00A8CCAB /* Assets.xcassets */,
+				B2EA92171DB85CB5005A5A9E /* TutorialViewController.swift */,
+				B2EA92181DB85CB5005A5A9E /* TutorialPageViewController.swift */,
+				B2EA921B1DB85FA6005A5A9E /* MapViewController.swift */,
 				B28FE2421D99B59B00A8CCAB /* LaunchScreen.storyboard */,
 				B28FE2451D99B59B00A8CCAB /* Info.plist */,
 				B28FE2771D99D31B00A8CCAB /* Bolts.framework */,
@@ -284,9 +293,12 @@
 			files = (
 				B21D9DF41DB56851002C7086 /* ToDoViewController.swift in Sources */,
 				B28FE23C1D99B59B00A8CCAB /* LoginViewController.swift in Sources */,
+				B2EA921A1DB85CB5005A5A9E /* TutorialPageViewController.swift in Sources */,
 				B28FE23A1D99B59B00A8CCAB /* AppDelegate.swift in Sources */,
 				B2D0727B1DAD934800EAE9FF /* ProfileViewController.swift in Sources */,
+				B2EA92191DB85CB5005A5A9E /* TutorialViewController.swift in Sources */,
 				B290E3901DAD878B00DD385E /* Helper.swift in Sources */,
+				B2EA921C1DB85FA6005A5A9E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
