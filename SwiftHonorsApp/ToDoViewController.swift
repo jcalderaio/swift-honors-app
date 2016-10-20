@@ -25,12 +25,9 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITextFieldDele
             //  Add item to user defaults
             NSUserDefaults.standardUserDefaults().setObject(toDoList, forKey: "toDoList")
             item.text = ""
-            
-            //  Update Tableview
-            
-            /*
-             *  TODO: The table view on the screen is not being updated after adding to array
-             */
+           
+            //  Reload the View
+            loadView()
             
             
         
