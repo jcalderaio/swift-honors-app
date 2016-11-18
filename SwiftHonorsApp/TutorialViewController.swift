@@ -22,7 +22,7 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pageControl.addTarget(self, action: "didChangePageControlValue", forControlEvents: .ValueChanged)
+        //pageControl.addTarget(self, action: "didChangePageControlValue", forControlEvents: .ValueChanged)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -47,12 +47,12 @@ extension TutorialViewController: TutorialPageViewControllerDelegate {
     
     func tutorialPageViewController(tutorialPageViewController: TutorialPageViewController,
         didUpdatePageCount count: Int) {
-        pageControl.numberOfPages = count
+        //pageControl.numberOfPages = count
     }
     
     func tutorialPageViewController(tutorialPageViewController: TutorialPageViewController,
         didUpdatePageIndex index: Int) {
-        pageControl.currentPage = index
+        //pageControl.currentPage = index
     }
     
 }
